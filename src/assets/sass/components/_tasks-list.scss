@@ -1,0 +1,41 @@
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding-bottom: 2em;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .button--checkbox {
+      min-width: 20px;
+      min-height: 20px;
+      padding: 0;
+      margin-right: 0.5em;
+      border: 2px solid hsl(var(--clr-orange));
+    }
+
+    .content {
+      width: 100%;
+      overflow: hidden;
+      cursor: text;
+    }
+
+    .content-edit {
+      width: 100%;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.all-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+  margin-inline: auto;
+  opacity: 0.5;
+}

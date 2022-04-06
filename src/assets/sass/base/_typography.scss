@@ -1,0 +1,57 @@
+body {
+  font-family: Calibri;
+}
+h1,
+h2,
+h3,
+.button {
+  font-family: Tahoma;
+}
+
+.header .title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.form {
+  .input--task-new,
+  .button {
+    font-size: 1.1rem;
+  }
+}
+
+.tasks-list {
+  .content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .content-edit {
+    font-family: Calibri;
+    font-size: 1rem;
+  }
+}
+.all-done {
+  font-size: 1.2rem;
+
+  .fa-clipboard-check {
+    font-size: 2.7rem;
+  }
+}
+
+.tasks-counter {
+  font-size: 1.1rem;
+  .value {
+    font-weight: 800;
+    font-family: Tahoma;
+  }
+}
+
+.footer {
+  .button {
+    font-size: 1.1rem;
+    &:hover {
+      color: white;
+    }
+  }
+}

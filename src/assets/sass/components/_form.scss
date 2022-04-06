@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  margin-inline: auto;
+  margin-bottom: 2em;
+
+  .input--task-new {
+    width: 100%;
+    padding: 5px 0 3px;
+    margin-right: 1em;
+    background: transparent;
+    border-bottom: 3px dashed hsl(var(--clr-orange));
+  }
+
+  .button--submit {
+    display: block;
+    padding: 0.3em 0.8em;
+    border: 2px solid hsl(var(--clr-grey));
+    border-radius: 6px;
+    background-color: #fff;
+    transform: rotate(4deg);
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+}

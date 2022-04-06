@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  padding-block: 1em 2em;
+
+  .img {
+    max-height: 80px;
+  }
+  .title {
+    padding: 0.5em 0.8em;
+    margin: 0;
+    background: hsl(var(--clr-orange));
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    transform: rotate(3deg);
+  }
+}
