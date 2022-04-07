@@ -19,9 +19,12 @@
     transition: all 200ms;
 
     > .fa-check {
+      margin: -1px;
       margin-left: 0.3em;
       padding: 0.5em;
       background: hsl(var(--clr-orange));
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
       transition: color 200ms;
     }
   }
