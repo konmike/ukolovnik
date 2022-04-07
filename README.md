@@ -1,4 +1,7 @@
-# ukolovnik
+# Todo aplikace ve Vue.js
+
+Jednoduchá Vue.js aplikace pro záznam úkolů. Úkol je možno přidat, odstranit a editovat.
+Vytvořeno pro účely přijímacího pohovoru.
 
 ## Project setup
 ```
