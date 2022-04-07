@@ -1,11 +1,13 @@
 <template>
   <footer class="footer">
-    <span class="tasks-counter">
-      Zbývá úkolů: <span class="value">{{ remaining }}</span></span
+    <span class="tasks-counter"> {{ remaining }}</span>
+    <button
+      class="button button--delete-all"
+      @mouseover="$emit('hoverDeleteAll', true)"
+      @mouseleave="$emit('hoverDeleteAll', false)"
+      @click="clearCompleted"
     >
-
-    <button class="button button--delete-all" @click="clearCompleted">
-      Dokončit vše
+      Dokončit vše <i class="fas fa-check"></i>
     </button>
   </footer>
 </template>
@@ -18,6 +20,7 @@ export default {
     clearCompleted() {
       localStorage.removeItem("tasks-mk");
       this.$emit("updateData");
+      this.$emit("hoverDeleteAll", false);
     },
   },
 };

@@ -1,6 +1,8 @@
 <template>
   <li class="tasks-list__item">
-    <button class="button button--checkbox" @click="$emit('remove')"></button>
+    <button class="button button--checkbox" @click="$emit('remove')">
+      <i class="fas fa-check"></i>
+    </button>
     <span v-if="!task.edit" @click="$emit('editTask')" class="content">
       {{ task.title }}
     </span>

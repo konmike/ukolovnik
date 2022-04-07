@@ -1,24 +1,26 @@
 <template>
-  <transition-group
-    name="fade"
-    mode="out-in"
-    tag="ul"
-    class="tasks-list"
-    v-if="this.tasks.length > 0"
-  >
-    <task-item
-      v-for="(task, index) in this.tasks"
-      :task="task"
-      :key="task.id"
-      @remove="removeTask(index)"
-      @editTask="editTask(task)"
-      @doneEdit="doneEdit(task)"
-      @cancelEdit="cancelEdit(task)"
-    ></task-item>
-  </transition-group>
+  <transition name="switch" mode="out-in">
+    <transition-group
+      name="list"
+      mode="out-in"
+      tag="ul"
+      class="tasks-list"
+      v-if="this.tasks.length > 0"
+      key="list"
+    >
+      <task-item
+        v-for="(task, index) in this.tasks"
+        :task="task"
+        :key="task.id"
+        @remove="removeTask(index)"
+        @editTask="editTask(task)"
+        @doneEdit="doneEdit(task)"
+        @cancelEdit="cancelEdit(task)"
+        :class="{ deleteHover: deleteHover }"
+      ></task-item>
+    </transition-group>
 
-  <transition name="fade" mode="out-in" v-else>
-    <span class="all-done">
+    <span class="all-done" v-else key="list-empty">
       <i class="fas fa-clipboard-check"></i> Všechny úkoly dokončeny!
     </span>
   </transition>
@@ -31,7 +33,7 @@ export default {
   components: {
     TaskItem,
   },
-  props: ["tasks"],
+  props: ["tasks", "deleteHover"],
 
   data() {
     return {
@@ -64,10 +66,29 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.fade-enter-active {
-  transition: opacity 300ms;
+/* list transitions */
+.list-enter-active,
+.list-leave-active {
+  transition: all 150ms;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.list-enter {
   opacity: 0;
+  transform: translateY(20px);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+/* switch transitions */
+.switch-enter,
+.switch-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.switch-enter-active,
+.switch-leave-active {
+  transition: all 200ms;
 }
 </style>

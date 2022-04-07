@@ -3,21 +3,26 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 
   .tasks-counter {
-    .value {
-      padding: 0.07em 0.2em;
-      border: 2px solid hsl(var(--clr-orange));
-    }
+    padding-inline: 0.3em;
+    border-top: 2px solid hsl(var(--clr-orange));
   }
 
   .button--delete-all {
-    padding: 0.5em 0.7em;
+    padding: 0;
+    padding-left: 0.5em;
+    border: 2px solid hsl(var(--clr-orange));
     border-radius: 5px;
+    background: white;
     transition: all 200ms;
 
-    &:hover {
-      background-color: hsl(var(--clr-orange));
+    > .fa-check {
+      margin-left: 0.3em;
+      padding: 0.5em;
+      background: hsl(var(--clr-orange));
+      transition: color 200ms;
     }
   }
 }
